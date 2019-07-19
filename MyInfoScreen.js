@@ -60,16 +60,37 @@ export default class MyInfoScreen extends React.Component
             tod
         })
     } 
-            
+          
+    onPressUpdate = () => {
+        this.AddInfo();
+        this.AlertUpdated();
+    }
+
+    AlertUpdated = () => {
+        Alert.alert(
+            'Information Updated!',
+            'Press the My Matches tab at the bottom of your screen.',
+            [
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            {cancelable: false},
+            );
+    }
+
     AddInfo = () => {
-        users[4]["full_name"] = this.state.full_name,
-        users[4][ "age"] = this.state.age,
-        users[4]["bart_line"] = this.state.bart_line,
-        users[4]["gwc_program"]= this.state.gwc_program,
-        users[4]["tod"]= this.state.tod,
+        const user_id = this.props.navigation.getParam("user_id", 'undefined');
+
+        users[user_id]["full_name"] = this.state.full_name,
+        users[user_id][ "age"] = this.state.age,
+        users[user_id]["bart_line"] = this.state.bart_line,
+        users[user_id]["gwc_program"]= this.state.gwc_program,
+        users[user_id]["tod"]= this.state.tod,
 
         console.log(users) 
+
+      
     }
+
     
 
     static navigationOptions = {
@@ -211,7 +232,7 @@ export default class MyInfoScreen extends React.Component
         // id="tod"
         />
 
-        <TouchableOpacity style={{alignItems: "center"}} onPress={this.AddInfo}>
+        <TouchableOpacity style={{alignItems: "center"}} onPress={this.onPressUpdate}>
               <Text  style={{
             borderColor: "#0000b3",
             width: 140,
@@ -222,6 +243,7 @@ export default class MyInfoScreen extends React.Component
             textAlign: "center", 
             fontFamily: "Futura",
             marginTop: 30,
+            marginBottom: 150,
             }}>
                 <Text>UPDATE</Text>
               </Text>

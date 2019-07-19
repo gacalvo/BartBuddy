@@ -71,7 +71,7 @@ export default class LoginScreen extends React.Component
         const password_correct = this.state.password == users[user_id]["password"]
 
         if (username_correct && password_correct) {
-          this.props.navigation.navigate('MyInfo')
+          this.props.navigation.navigate('MyInfo', { user_id: user_id })
           validLogin = true
         } 
       }
