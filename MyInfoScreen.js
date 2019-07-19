@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { Button, Text, View, ScrollView, TextInput, TouchableOpacity, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { 
     createBottomTabNavigator, 
@@ -14,23 +14,73 @@ import { users } from './App';
 
 export default class MyInfoScreen extends React.Component 
 {
-  static navigationOptions = {
-    title: "My Info",
-    headerStyle: {
-      backgroundColor: '#0000b3',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-    fontWeight: 'bold',
-    fontFamily: "Futura",
-    fontSize: 20,
-    },
-  };
+    
+    constructor(props) {
+        super(props)
+
+        this.state = { 
+            full_name: '',
+            age: '', 
+            bart_line: '', 
+            gwc_program: '', 
+            tod: '', 
+
+
+
+        }
+    }
+
+    onFullNameChange = full_name => {
+        this.setState({
+          full_name
+        })
+    } 
+    
+    
+    onAgeChange = age => {
+    this.setState({
+        age
+        })
+    } 
+
+    onBartLineChange = bart_line => {
+    this.setState({
+        bart_line
+        })
+    } 
+
+    onGwcProgramChange = gwc_program => {
+        this.setState({
+            gwc_program
+        })
+    } 
+    
+    onTodChange = tod => {
+        this.setState({
+            tod
+        })
+    } 
+            
+    
+
+    static navigationOptions = {
+        title: "My Info",
+        headerStyle: {
+        backgroundColor: '#0000b3',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+        fontWeight: 'bold',
+        fontFamily: "Futura",
+        fontSize: 20,
+        },
+    };
 
 
   render() {
+    console.log(this.state)
     return(
-      <View style={{ 
+      <ScrollView style={{ 
         flex: 1, 
         alignItems: "center", 
         justifyContent: "center",
@@ -40,12 +90,14 @@ export default class MyInfoScreen extends React.Component
             color: '#0000b3',
             fontWeight: 'bold',
             fontFamily: "Futura",
-            fontSize: 16,
-            marginBottom: 10,
+            fontSize: 18,
+            marginBottom: 30,
+            textAlign: 'center',
             }}>
           <Text>My Information</Text>
         </Text>
 
+    
         <Text style={{
             color: '#708090',
             fontFamily: "Futura",
@@ -61,6 +113,10 @@ export default class MyInfoScreen extends React.Component
             borderWidth: 1,
             backgroundColor: 'white',
         }} 
+        onChangeText={this.onFullNameChange}
+        value={this.state.full_name}
+        // id="full_name"
+        placeholder="First Last"
           
         />
 
@@ -79,6 +135,9 @@ export default class MyInfoScreen extends React.Component
             borderWidth: 1,
             backgroundColor: 'white',
         }} 
+        // id="age"
+        onChangeText={this.onAgeChange}
+        value={this.state.age}
         />
 
         <Text style={{
@@ -96,6 +155,9 @@ export default class MyInfoScreen extends React.Component
             borderWidth: 1,
             backgroundColor: 'white',
         }} 
+        onChangeText={this.onBartLineChange}
+        value={this.state.bart_line}
+        // id="bart_line"
         />
 
         <Text style={{
@@ -113,6 +175,9 @@ export default class MyInfoScreen extends React.Component
             borderWidth: 1,
             backgroundColor: 'white',
         }} 
+        // id="gwc_program"
+        onChangeText={this.onGwcProgramChange}
+        value={this.state.gwc_program}
         />
         
         <Text style={{
@@ -130,11 +195,34 @@ export default class MyInfoScreen extends React.Component
             borderWidth: 1,
             backgroundColor: 'white',
         }} 
+        onChangeText={this.onTodChange}
+        value={this.state.tod}
+        // id="tod"
         />
 
+        <TouchableOpacity style={{alignItems: "center"}} onPress={this.AddInfo}>
+              <Text  style={{
+            borderColor: "#0000b3",
+            width: 140,
+            backgroundColor: '#0000b3',
+            color: 'white', 
+            fontWeight: 'bold', 
+            fontSize: 18,
+            textAlign: "center", 
+            marginBottom: 10,
+            fontFamily: "Futura",
+            marginTop: 30,
+            }}>
+                <Text>UPDATE</Text>
+              </Text>
+
+          </TouchableOpacity>
         
-      </View>  
+      </ScrollView>  
     );
   }
+
 }
+console.log(users)
+
 

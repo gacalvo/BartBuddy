@@ -94,17 +94,15 @@ export default class LoginScreen extends React.Component
           
         }}>
           <Text style={{
-            borderColor: "#0000b3",
-            width: 160,
-            backgroundColor: '#0000b3',
-            color: 'white', 
-            fontWeight: 'bold', 
-            fontSize: 18,
-            textAlign: 'center',  
-            marginBottom: 10,
+            color: '#0000b3',
+            fontWeight: 'bold',
             fontFamily: "Futura",
-          }}>
-            <Text>Login</Text>
+            fontSize: 18,
+            marginBottom: 10,
+            textAlign: 'center',
+            }}>
+          
+            <Text>Sign in</Text>
           </Text>
   
 
