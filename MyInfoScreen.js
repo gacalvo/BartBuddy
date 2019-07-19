@@ -61,6 +61,15 @@ export default class MyInfoScreen extends React.Component
         })
     } 
             
+    AddInfo = () => {
+        users[4]["full_name"] = this.state.full_name,
+        users[4][ "age"] = this.state.age,
+        users[4]["bart_line"] = this.state.bart_line,
+        users[4]["gwc_program"]= this.state.gwc_program,
+        users[4]["tod"]= this.state.tod,
+
+        console.log(users) 
+    }
     
 
     static navigationOptions = {
@@ -78,7 +87,8 @@ export default class MyInfoScreen extends React.Component
 
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
+    
     return(
       <ScrollView style={{ 
         flex: 1, 
@@ -91,6 +101,7 @@ export default class MyInfoScreen extends React.Component
             fontWeight: 'bold',
             fontFamily: "Futura",
             fontSize: 18,
+            marginTop: 100,
             marginBottom: 30,
             textAlign: 'center',
             }}>
@@ -209,7 +220,6 @@ export default class MyInfoScreen extends React.Component
             fontWeight: 'bold', 
             fontSize: 18,
             textAlign: "center", 
-            marginBottom: 10,
             fontFamily: "Futura",
             marginTop: 30,
             }}>
@@ -217,12 +227,18 @@ export default class MyInfoScreen extends React.Component
               </Text>
 
           </TouchableOpacity>
+
+          <Text> </Text>
         
       </ScrollView>  
     );
   }
 
+  
+
+//         users.push(user_id);
+
 }
-console.log(users)
+
 
 
