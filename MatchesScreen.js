@@ -157,37 +157,110 @@ export default class MatchesScreen extends React.Component
           }}
         >
           <Text style ={{
-            fontColor: '#0000b3',
+            color: 'gray',
+            fontFamily: "Futura",
+            fontSize: 15,
+            marginBottom: 30
+          }}>
+            <Text >
+            your Buddy is .....
+            </Text>
+          </Text>
+
+
+          <Text style ={{
+            color: '#0000b3',
+            fontWeight: "bold",
             fontSize: 30,
-            marginBottom: 50
+            fontFamily: "Futura",
+            marginBottom: 30
           }}>
             <Text >
             {top_user.full_name}
             </Text>
           </Text>
+
           <Text style ={{
-            marginBottom: 30
+            color: 'gray',
+            fontFamily: "Futura",
+            fontSize: 15,
+            marginBottom: 5
+          }}>
+            <Text >
+            email:
+            </Text>
+          </Text>
+
+
+          <Text style ={{
+            fontFamily: "Futura",
+            marginBottom: 20,
+            fontSize: 20,
           }}>
             <Text >
               {top_user.email}
             </Text>
           </Text>
+          
           <Text style ={{
-            marginBottom: 30
+            color: 'gray',
+            fontFamily: "Futura",
+            fontSize: 15,
+            marginBottom: 5
+          }}>
+            <Text >
+            BART Station:
+            </Text>
+          </Text>
+
+          <Text style ={{
+            fontFamily: "Futura",
+            marginBottom: 20,
+            fontSize: 20,
           }}>
             <Text >
               {top_user.start_station}
             </Text>
           </Text>
+
           <Text style ={{
-            marginBottom: 30
+            color: 'gray',
+            fontFamily: "Futura",
+            fontSize: 15,
+            marginBottom: 5
+          }}>
+            <Text >
+            GWC Program:
+            </Text>
+          </Text>
+
+
+          <Text style ={{
+            fontFamily: "Futura",
+            marginBottom: 20,
+            fontSize: 20,
           }}>
             <Text >
               {top_user.gwc_program}
             </Text>
           </Text>
+
           <Text style ={{
-            marginBottom: 30
+            color: 'gray',
+            fontFamily: "Futura",
+            fontSize: 15,
+            marginBottom: 5
+          }}>
+            <Text >
+            Time of Day:
+            </Text>
+          </Text>
+
+
+          <Text style ={{
+            fontFamily: "Futura", 
+            marginBottom: 20,
+            fontSize: 20,
           }}>
             <Text >
               {top_user.tod}
