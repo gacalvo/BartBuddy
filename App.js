@@ -55,7 +55,8 @@ const DetailsNavigator = createStackNavigator({
   Matches: {
     screen: MatchesScreen,
     navigationOptions: { title: 'BART Buddy👥'}
-  }
+  },
+  
 })
 
 const TabNavigator = createBottomTabNavigator({
